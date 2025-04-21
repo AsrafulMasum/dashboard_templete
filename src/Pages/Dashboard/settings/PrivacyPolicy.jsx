@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import JoditEditor from 'jodit-react';
 import { Button } from 'antd';
-import { usePrivacyPolicyQuery, useUpdatePricyPolicyMutation } from "../../redux/apiSlices/privacyPolicySlice"
+import { usePrivacyPolicyQuery, useUpdatePricyPolicyMutation } from "../../../redux/apiSlices/privacyPolicySlice"
 import toast from 'react-hot-toast';
 
 const PrivacyPolicy = () => {

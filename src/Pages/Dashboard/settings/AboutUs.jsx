@@ -1,7 +1,7 @@
 import React, { useState, useRef,  useEffect } from 'react';
 import JoditEditor from 'jodit-react';
 import { Button} from 'antd';
-import { useAboutUsQuery, useUpdateAboutUsMutation } from "../../redux/apiSlices/aboutSlice"
+import { useAboutUsQuery, useUpdateAboutUsMutation } from "../../../redux/apiSlices/aboutSlice"
 import toast from 'react-hot-toast';
 
 const AboutUs = () => {

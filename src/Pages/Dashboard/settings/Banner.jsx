@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { FaTrash } from "react-icons/fa6";
-import { useBannersQuery, useCreateBannerMutation, useDeleteBannerMutation, useUpdateStatusMutation } from '../../redux/apiSlices/bannerSlice';
+import { useBannersQuery, useCreateBannerMutation, useDeleteBannerMutation, useUpdateStatusMutation } from '../../../redux/apiSlices/bannerSlice';
 import toast from 'react-hot-toast';
-import { imageUrl } from '../../redux/api/baseApi';
+import { imageUrl } from '../../../redux/api/baseApi';
 import { Checkbox } from 'antd';
 
 const Banner = () => {

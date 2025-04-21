@@ -8,10 +8,6 @@ import Users from "../Pages/Dashboard/Users";
 import Admin from "../Pages/Dashboard/Admin";
 import Category from "../Pages/Dashboard/Category";
 import Events from "../Pages/Dashboard/Events";
-import Banner from "../Pages/Dashboard/Banner";
-import AboutUs from "../Pages/Dashboard/AboutUs";
-import PrivacyPolicy from "../Pages/Dashboard/PrivacyPolicy";
-import TermsAndConditions from "../Pages/Dashboard/TermsAndCondition";
 import ChangePassword from "../Pages/Auth/ChangePassword";
 import Login from "../Pages/Auth/Login";
 import Subscription from "../Pages/Dashboard/Subscription";
@@ -23,6 +19,10 @@ import NotFound from "../NotFound";
 import Notifications from "../Pages/Dashboard/Notifications";
 import SubCategory from "../Pages/Dashboard/SubCategory";
 import AdminProfile from "../Pages/Dashboard/AdminProfile/AdminProfile";
+import AboutUs from "../Pages/Dashboard/settings/AboutUs";
+import PrivacyPolicy from "../Pages/Dashboard/settings/PrivacyPolicy";
+import Banner from "../Pages/Dashboard/settings/Banner";
+import TermsAndConditions from "../Pages/Dashboard/settings/TermsAndCondition";
 
 const router = createBrowserRouter([
     {

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import {  MenuOutlined, SettingOutlined } from "@ant-design/icons";
-import { Button,  Layout, Menu, Select, theme } from "antd";
+import { MenuOutlined, SettingOutlined } from "@ant-design/icons";
+import { Button, Layout, Menu, Select, theme } from "antd";
 import { TfiLayoutSliderAlt } from "react-icons/tfi";
 import { Badge } from "antd";
 import { GiReceiveMoney } from "react-icons/gi";
@@ -9,27 +9,24 @@ import { RxDashboard } from "react-icons/rx";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-// import Logo from "../../assets/logo.png"; 
+// import Logo from "../../assets/logo.png";
 import { FaRegBell } from "react-icons/fa6";
 import { BiCrown } from "react-icons/bi";
 import { MdOutlineCategory } from "react-icons/md";
 import { MdOutlineEvent } from "react-icons/md";
-// import ImgBaseURL from "../../../ImgBaseURL"; 
+// import ImgBaseURL from "../../../ImgBaseURL";
 import { useProfileQuery } from "../../redux/apiSlices/authSlice";
 const { Header, Sider, Content } = Layout;
 import { IoIosLogOut } from "react-icons/io";
 import { imageUrl } from "../../redux/api/baseApi";
 const { Option } = Select;
 
-
-
-
 const Dashboard = () => {
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(localStorage.lang);
-  const {data: profile} = useProfileQuery();
-  
+  const { data: profile } = useProfileQuery();
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -41,18 +38,16 @@ const Dashboard = () => {
     localStorage.setItem("lang", value);
   };
 
-  
-
   useEffect(() => {
     i18n.changeLanguage(selectedLanguage);
   }, [selectedLanguage, i18n]);
 
-  const src = profile?.image?.startsWith("https") ? profile?.image : `${imageUrl}/${profile?.image}`
+  const src = profile?.image?.startsWith("https")
+    ? profile?.image
+    : `${imageUrl}/${profile?.image}`;
 
   return (
     <Layout style={{ height: "100vh", width: "100vw" }}>
-
-      
       <Sider
         width="313px"
         trigger={null}
@@ -78,7 +73,9 @@ const Dashboard = () => {
           }}
         >
           <Link to="/">
-          <p className="text-2xl font-semibold font-sans tracking-wider text-primary">TradCouples</p>
+            <p className="text-2xl font-semibold font-sans tracking-wider text-primary">
+              TradCouples
+            </p>
           </Link>
         </div>
 
@@ -114,19 +111,13 @@ const Dashboard = () => {
             </Link>
           </Menu.Item>
 
-          <Menu.Item
-            key="7"
-            icon={<BiCrown  size={22}  />}
-          >
+          <Menu.Item key="7" icon={<BiCrown size={22} />}>
             <Link to="/subscription" style={{ fontSize: "16px" }}>
               {t("subscription")}
             </Link>
           </Menu.Item>
 
-          <Menu.Item
-            key="8"
-            icon={<TfiLayoutSliderAlt size={22}  />}
-          >
+          <Menu.Item key="8" icon={<TfiLayoutSliderAlt size={22} />}>
             <Link to="/add-slider" style={{ fontSize: "16px" }}>
               {t("addSlider")}
             </Link>
@@ -141,15 +132,11 @@ const Dashboard = () => {
             </Link>
           </Menu.Item>
 
-          <Menu.Item
-            key="10"
-            icon={<MdOutlineEvent size={22}  />}
-          >
+          <Menu.Item key="10" icon={<MdOutlineEvent size={22} />}>
             <Link to="/events" style={{ fontSize: "16px" }}>
               {t("events")}
             </Link>
           </Menu.Item>
-
 
           <Menu.Item
             key="11"
@@ -163,16 +150,15 @@ const Dashboard = () => {
           <Menu.Item
             key="12"
             icon={<IoIosLogOut style={{ fontSize: "22px" }} />}
-            onClick={()=> {
-              navigate('/login');
-              localStorage.removeItem('token');}
-            }
+            onClick={() => {
+              navigate("/login");
+              localStorage.removeItem("token");
+            }}
           >
             <p>Logout</p>
           </Menu.Item>
         </Menu>
       </Sider>
-
 
       <Layout>
         <Header
@@ -205,50 +191,54 @@ const Dashboard = () => {
           </div>
 
           <div
-            style={{ display: "flex", gap: 20, alignItems: "center", lineHeight: 0 }}
+            style={{
+              display: "flex",
+              gap: 20,
+              alignItems: "center",
+              lineHeight: 0,
+            }}
           >
-              <Select
-                value={selectedLanguage}
-                style={{ width: 150 }}
-                onChange={handleSelectLanguage}
-              >
-                <Option value="en">
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <img
-                      src="https://cdn.britannica.com/29/22529-004-ED1907BE/Union-Flag-Cross-St-Andrew-of-George.jpg"
-                      alt="English"
-                      style={{ marginRight: 8, width: 16, height: 16 }}
-                    />
-                    English
-                  </div>
-                </Option>
-                <Option value="es">
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png"
-                      style={{ marginRight: 8, width: 16, height: 16 }}
-                    />
-                    German
-                  </div>
-                </Option>
-              </Select>
+            <Select
+              value={selectedLanguage}
+              style={{ width: 150 }}
+              onChange={handleSelectLanguage}
+            >
+              <Option value="en">
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <img
+                    src="https://cdn.britannica.com/29/22529-004-ED1907BE/Union-Flag-Cross-St-Andrew-of-George.jpg"
+                    alt="English"
+                    style={{ marginRight: 8, width: 16, height: 16 }}
+                  />
+                  English
+                </div>
+              </Option>
+              <Option value="es">
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png"
+                    style={{ marginRight: 8, width: 16, height: 16 }}
+                  />
+                  German
+                </div>
+              </Option>
+            </Select>
 
             <Link to="/notification" style={{ fontSize: "16px" }}>
-              <Badge count={5} >
-                <FaRegBell color="#6C57EC" size={30}/>
+              <Badge count={5}>
+                <FaRegBell color="#6C57EC" size={30} />
               </Badge>
             </Link>
 
             <Link to="/profile" style={{ fontSize: "16px" }}>
               <img
-                  style={{ borderRadius: "100%" }}
-                  width="40"
-                  height="40"
-                  src={src}
-                  alt="person-male--v2"
-                />
+                style={{ borderRadius: "100%" }}
+                width="40"
+                height="40"
+                src={src}
+                alt="person-male--v2"
+              />
             </Link>
-
           </div>
         </Header>
         <Content
@@ -258,10 +248,17 @@ const Dashboard = () => {
             marginLeft: collapsed ? 130 : 345,
             marginRight: 30,
             minHeight: 280,
-            overflow: "auto"
+            overflow: "auto",
           }}
         >
-          <div style={{background: "#FeFeFe", height: "100%", padding: 16, borderRadius: 8}}>
+          <div
+            style={{
+              background: "#FeFeFe",
+              height: "100%",
+              padding: 16,
+              borderRadius: 8,
+            }}
+          >
             <Outlet />
           </div>
         </Content>
