@@ -41,11 +41,13 @@ const Notifications = () => {
               className="border-b-[1px] pb-2 border-[#d9d9d9] flex items-center gap-3"
             >
               <img
+                className="object-cover"
                 style={{
                   height: "50px",
                   width: "50px",
                   borderRadius: "100%",
                   border: "2px solid gray",
+                  objectFit: "cover",
                 }}
                 src="https://img.freepik.com/free-photo/everything-is-okay-cheerful-friendly-looking-caucasian-guy-with-moustache-beard-raising-hand-with-ok-great-gesture-giving-approval-like-having-situation-control_176420-22386.jpg"
               />

@@ -1,11 +1,7 @@
 import React from "react";
 import { FaUserGroup } from "react-icons/fa6";
-import { Button } from "antd";
 
 const Home = () => {
-  const onChange = (checked) => {
-    console.log(checked);
-  };
   return (
     <div>
       <div className="grid grid-cols-4 gap-6 h-[120px]">
@@ -59,9 +55,6 @@ const Home = () => {
           </h3>
         </div>
       </div>
-      <Button className="bg-green-500 text-white border-red-500" type="" size="middle">
-        Primary
-      </Button>{" "}
     </div>
   );
 };
