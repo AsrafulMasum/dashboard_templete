@@ -25,109 +25,107 @@ import Banner from "../Pages/Dashboard/settings/Banner";
 import TermsAndConditions from "../Pages/Dashboard/settings/TermsAndCondition";
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    // element: <ProtectedRoute><Main /></ProtectedRoute> ,
+    element: <Main />,
+    children: [
+      {
         path: "/",
-        // element: <ProtectedRoute><Main /></ProtectedRoute> , 
-        element: <Main />,
-        children: [
-            {
-                path: "/",
-                element: <Home />
-            },
-            {
-                path: "/earnings",
-                element: <Earnings />
-            },
-            {
-                path: "/artists",
-                element: <Artists />
-            },
-            {
-                path: "/users",
-                element: <Users />
-            },
-            {
-                path: "/subscription",
-                element: <Subscription />
-            },
-            {
-                path: "/admin",
-                element: <Admin />
-            },
-            {
-                path: "/category",
-                element: <Category />
-            },
-            {
-                path: "/events",
-                element: <Events />
-            },
-            {
-                path: "/banner",
-                element: <Banner />
-            },
-            {
-                path: "/about-us",
-                element: <AboutUs />
-            },
-            {
-                path: "/privacy-policy",
-                element: <PrivacyPolicy />
-            },
-            {
-                path: "/terms-and-conditions",
-                element: <TermsAndConditions />
-            },
-            {
-                path: "/change-password",
-                element: <ChangePassword />
-            },
-            {
-                path: "/sub-category",
-                element: <SubCategory />
-            },
-            {
-                path: "/profile",
-                element: <AdminProfile />
-            }
-            ,
-            {
-                path: "/notification",
-                element: <Notifications/> 
-            }
-               
-        ]
-    },
-    {
+        element: <Home />,
+      },
+      {
+        path: "/earnings",
+        element: <Earnings />,
+      },
+      {
+        path: "/artists",
+        element: <Artists />,
+      },
+      {
+        path: "/users",
+        element: <Users />,
+      },
+      {
+        path: "/subscription",
+        element: <Subscription />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
+      },
+      {
+        path: "/category",
+        element: <Category />,
+      },
+      {
+        path: "/events",
+        element: <Events />,
+      },
+      {
+        path: "/banner",
+        element: <Banner />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "/terms-and-conditions",
+        element: <TermsAndConditions />,
+      },
+      {
+        path: "/change-password",
+        element: <ChangePassword />,
+      },
+      {
+        path: "/sub-category",
+        element: <SubCategory />,
+      },
+      {
+        path: "/profile",
+        element: <AdminProfile />,
+      },
+      {
+        path: "/notification",
+        element: <Notifications />,
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <Auth />,
+    children: [
+      {
         path: "/auth",
-        element: <Auth />,
-        children: [
-            {
-                path: "/auth",
-                element: <Login />,
-            },
-            {
-                path: "login",
-                element: <Login />,
-            },
-            {
-                path: "forgot-password",
-                element: <ForgotPassword />,
-            },
-            {
-                path: "verify-otp",
-                element: <VerifyOtp />,
-            },
-            {
-                path: "reset-password",
-                element: <ResetPassword />,
-            }
-        ]
-    },
-    {
-        path: "*",
-        element: <NotFound />,
-    }
+        element: <Login />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "verify-otp",
+        element: <VerifyOtp />,
+      },
+      {
+        path: "reset-password",
+        element: <ResetPassword />,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
 
 export default router;
